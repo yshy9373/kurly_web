@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 interface ProductType {
     상품코드 : string;
@@ -31,16 +30,7 @@ function SubMain2Component({베스트: 새상품}: Product){
         createScriptFn("./js/category.js");
         // createScriptFn("./js/new_product2.js");
 
-        axios({
-            url:'./data/product2.json',
-            method:'GET'
-        })
-        .then((res: any)=>{
-            setState(res.data.베스트);
-        })
-        .catch((err: any)=>{
-            console.log(`AXIOS 실패 ${err}`);
-        })
+
     },[]);
 
     const commaRegExp=(z: any)=>{
